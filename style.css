@@ -1,0 +1,340 @@
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd, ul {
+  margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+  }
+  /* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* General STYLE */
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('./assets/fonts/Rubik-Light.woff2') format('woff2'),
+       url('./assets/fonts/Rubik-Light.woff') format('woff');
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Rubik';
+  src: url('./assets/fonts/Rubik-Regular.woff2') format('woff2'),
+       url('./assets/fonts/Rubik-Regular.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Rubik';
+  src: url('./assets/fonts/Rubik-Medium.woff2') format('woff2'),
+       url('./assets/fonts/Rubik-Medium.woff') format('woff');
+  font-weight: 500;
+  font-display: swap;
+}
+
+:root {
+
+    --color1:#7078C9; 
+    --color2:#1C204B; 
+    --color3: #5747EA;
+    --color4: #BBC0FF;
+    --color5: #D8D8D8;
+    --color6: #FF8B64;
+    --color7: #55C2E6;
+    --color8: #FF5E7D;
+    --color9: #4BCF82;
+    --color10: #7335D2;
+    --color11: #F1C75B;
+
+    --ffparagraph: 'Rubik', sans-serif;
+    --fsparagraph: 1rem;
+}
+body {
+    padding:0 1.5rem;
+    font-family: var(--ffparagraph);
+    text-rendering: optimizeSpeed;
+    text-align:left; 
+    /* to stick the footer to the bottom */
+    min-height: 100vh;  
+    display:flex; flex-direction:column; 
+    background:#0E1323;
+}
+h1, h2, h3, ul {
+    padding:0;
+}
+.hide{
+  display:none;
+}
+
+
+
+/* Restyling radio and checkbox */
+input[type=radio],
+input[type=checkbox] {
+  position:absolute;
+  opacity:0;
+
+  -webkit-appearance: none;
+  appearance: none;
+  background: #fff; /* for iOS */
+  border: 1px solid var(--color4);
+  height: 1.875em;
+  width: 4em;
+  display: inline-block;
+  border-radius: 100%;
+  vertical-align: text-bottom;
+  /* position: relative; */
+  cursor:pointer;
+  margin: 0 0.937rem 0 0;
+}
+label {
+  font-size:1.125rem;
+  font-weight:400;
+  color:var(--color1); 
+  padding:0.1rem;
+}
+input[type=radio]:hover + label,
+input[type=checkbox]:hover + label{
+  color:white;
+}
+
+input[type=radio]:checked + label{
+  color:white;
+}
+input[type=radio]:focus + label {
+  border: 1px dashed var(--color1);
+}
+main {
+  max-width:20.438rem;
+  margin:2rem auto;
+  display:grid;
+  gap:1.5rem;
+}
+
+.user-name {
+  background: var(--color3);
+  border-radius:0.938rem;
+  position:relative;
+  z-index:2;
+  padding: 2.1rem 1.85rem 1.85rem 1.85rem;
+}
+.user-name img {
+  border: 3px solid white;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0, 25%);
+  border-radius: 50%;
+  box-sizing: content-box;
+}
+.user-name h1 {
+  color:white;
+  font-weight:300;
+  font-size:1.5rem;
+  margin-left:0.8rem;
+  margin-top:0;
+}
+.user-name h1 span {
+  color:var(--color4);
+  font-size:0.938rem;
+  font-weight:400;
+  display:block;
+  margin-bottom:0.188rem;
+}
+.switches {
+  position:relative;
+  z-index:1;
+  background:var(--color2);
+  padding:5rem 1.875rem 1.875rem 1.875rem;
+  border-radius:0.938rem;
+  margin-top:-3.4rem;
+  display:grid;
+  gap:1.313rem;
+}
+
+.report{
+  overflow:hidden;
+  cursor:pointer;
+  height: 10.4rem;
+}
+.bg-work, .bg-play, .bg-study, .bg-exercise, .bg-social, .bg-selfcare {
+  border-radius:0.938rem 0.938rem 0 0;
+  width: 100%;
+  height:4.813rem;
+  position:relative;
+  z-index:0;
+  overflow:hidden;
+}
+.bg-work {
+  background: var(--color6);
+}
+.bg-play {
+  background: var(--color7);
+}
+.bg-study {
+  background: var(--color8);
+}
+.bg-exercise {
+  background: var(--color9);
+}
+.bg-social {
+  background: var(--color10);
+}
+.bg-selfcare {
+  background: var(--color11);
+}
+.bg-work svg, .bg-play svg, .bg-study svg, .bg-exercise svg, .bg-social svg, .bg-selfcare svg{
+  position:absolute;
+  transition:all 1s ease-in-out;
+  opacity:1;
+}
+.bg-work svg {
+  fill:#D96C47;
+  top:-0.688rem;
+  right:1rem;
+}
+.bg-play svg {
+  fill:#3F9CBB;
+  top:-0.35rem;
+  right:1.313rem;
+}
+.bg-study svg {
+  fill:#F04667;
+  top:-0.438rem;
+  right:1.063rem; 
+}
+.bg-exercise svg {
+  fill:#29BA66;
+  top:-0.063rem;
+  right:1.12rem;
+}
+.bg-social svg {
+  fill:#5A1CBB;
+  top:-0.875rem;
+  right:0.8rem;
+}
+.bg-selfcare svg {
+  fill:#E6A532;
+  top:-0.6rem;
+  right:0.95rem;
+}
+.report-content {
+  background:var(--color2);
+  padding:1.875rem;
+  border-radius:0.938rem;
+  z-index:2;
+  position:relative;
+  margin-top:-2rem;
+  transition:all 0.2s linear;
+}
+.title {
+  display:flex;
+  justify-content: space-between;
+}
+.title p{
+  color:white;
+  font-size:1.125rem;
+  font-weight:500;
+  transition:all 0.3s;
+}
+.more-details {
+  background:url(./assets/images/icon-ellipsis.svg) no-repeat center;
+  background-size: contain;
+  width:1.313rem;
+  height:0.313rem;
+  display:inline-block;
+  padding: 0.5rem;
+}
+.more-details:hover {
+  filter: 
+  brightness(0) saturate(100%) invert(100%) sepia(80%) saturate(0%) hue-rotate(350deg) brightness(106%) contrast(103%);
+}
+.current {
+  color:white;
+  font-weight:300;
+  font-size:2rem;
+}
+.last {
+  color: var(--color4);
+  font-weight:400;
+  font-size:0.938rem;
+  
+}
+.report:hover .report-content{
+  background: #33397A;
+}
+.report:hover svg, .report:focus svg{
+  transform:translateX(-8rem) rotate(-360deg);
+}
+.report:hover .report-content, .report:focus .report-content{
+  margin-top:-2.5rem;
+  padding-top:2.375rem;
+}
+.report:hover .title p, .report:focus .title p{
+  font-size:1.2rem;
+}
+
+footer { font-size: 11px; text-align: center; color: var(--color1); }
+footer a { color: var(--color1); }
+
+
+@media screen and (max-width:57rem) {
+  .user-name {
+    display:flex;
+  }
+  .user-name h1 {
+    margin-top: 1rem;
+  }
+  .switches {
+    display: flex;
+    justify-content: space-between;
+  }
+  .report-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .title {
+    flex-basis: 100%;
+  }
+
+}
+
+@media screen and (min-width:57rem) {
+  main {
+    max-width:69.375rem;
+    margin:auto;
+    grid-template-columns: repeat(4, 1fr);
+    gap:1.875rem;
+  }
+  .left {
+    grid-row: 1 / 3;
+  }
+  .user-name {
+    padding: 2.1rem 1.85rem 5rem 1.85rem;
+  }
+  .user-name h1 {
+    font-size:2.5rem;
+    margin-top:2.25rem;
+    margin-left:0.15rem;
+  }
+  .report {
+    height:15.25rem;
+  }
+  .current {
+    font-size:3.5rem;
+    margin-top:1.5rem;
+  }
+  .last {
+    margin-top:0.41rem;
+  }
+}
