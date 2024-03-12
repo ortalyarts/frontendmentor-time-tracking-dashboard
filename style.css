@@ -112,8 +112,8 @@ input[type=checkbox]:hover + label{
 input[type=radio]:checked + label{
   color:white;
 }
-input[type=radio]:focus + label {
-  border: 1px dashed var(--color1);
+input[type=radio]:focus-visible + label {
+  outline: 1px dashed var(--color1);
 }
 main {
   max-width:20.438rem;
